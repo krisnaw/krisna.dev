@@ -3,7 +3,7 @@ import {Inter} from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header/header";
-import Providers from "@/app/providers";
+import {ThemeProvider} from "@/app/theme-provider";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -18,15 +18,15 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="h-full antialiased">
-            <body className={inter.className + 'flex h-full bg-zinc-50 dark:bg-black'}>
-                <Providers>
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col h-screen justify-between">
+        <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+            <body className={inter.className + 'flex h-full bg-white dark:bg-black'}>
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col h-screen justify-between ">
                         <Header/>
                         {children}
                         <Footer/>
                     </div>
-                </Providers>
+                </ThemeProvider>
             </body>
         </html>
     );

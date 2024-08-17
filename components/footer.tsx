@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Footer() {
     return (
-        <footer className="mt-32 flex-none">
+        <footer className="mt-32 flex-none pb-4">
             <div>
                 <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
                     <div

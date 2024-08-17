@@ -29,11 +29,12 @@ function Header() {
     return (
         <header>
             <div className={'pt-6'}>
-                <nav className={'flex justify-between py-4'}>
+                <nav
+                    className={'flex items-center justify-between py-2'}>
                     <div>
                         <TopAvatar/>
                     </div>
-                    <ul className={'flex rounded-full px-3 text-sm font-medium space-x-4 ring-1 ring-white bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm'}>
+                    <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
                         <NavigationLink href={'/'}>About</NavigationLink>
                         <NavigationLink href={'/articles'}>Articles</NavigationLink>
                         <NavigationLink href={'/projects'}>Projects</NavigationLink>
