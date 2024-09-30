@@ -1,5 +1,5 @@
 import SimpleLayout from "@/components/simple-layout";
-import {Card} from "@/components/Card";
+import {Card} from "@/components/card";
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
     return (
