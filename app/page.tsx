@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {GitHubIcon, InstagramIcon, LinkedInIcon, XIcon} from "@/components/social-icon";
+import BlogList from "@/components/blog-list";
 
 function SocialLink({
                         icon: Icon,
@@ -19,9 +20,7 @@ export default function Home() {
     return (
         <>
             <div className="flex space-x-4">
-
-
-
+                <BlogList />
             </div>
 
         </>
