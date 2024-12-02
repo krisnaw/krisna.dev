@@ -1,24 +1,29 @@
-import Link from "next/link";
+import Link from 'next/link'
+import { Github, Twitter, Linkedin } from 'lucide-react'
 
-function Footer() {
+export function Footer() {
     return (
-        <footer className="mt-32 flex-none pb-4">
-            <div>
-                <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-                    <div
-                        className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                        <Link href="/about">About</Link>
-                        <Link href="/projects">Projects</Link>
-                        <Link href="/speaking">Speaking</Link>
-                        <Link href="/uses">Uses</Link>
-                    </div>
-                    <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                        &copy; {new Date().getFullYear()} Krisna Wijaya. All rights reserved.
-                    </p>
+        <footer className="py-8">
+            <div className="container max-w-[700px] mx-auto flex flex-col sm:flex-row justify-between items-center">
+                <p className="text-sm dark:text-gray-400 text-gray-600 mb-4 sm:mb-0">
+                    © 2023 Your Name. All rights reserved.
+                </p>
+                <div className="flex space-x-4">
+                    <Link href="https://github.com" className="text-gray-400 hover:text-gray-300 transition-colors">
+                        𝕏
+                        <span className="sr-only">GitHub</span>
+                    </Link>
+                    <Link href="https://twitter.com" className="text-gray-400 hover:text-gray-300 transition-colors">
+                        <Twitter className="h-5 w-5" />
+                        <span className="sr-only">Twitter</span>
+                    </Link>
+                    <Link href="https://linkedin.com" className="text-gray-400 hover:text-gray-300 transition-colors">
+                        <Linkedin className="h-5 w-5" />
+                        <span className="sr-only">LinkedIn</span>
+                    </Link>
                 </div>
             </div>
         </footer>
     )
 }
 
-export default Footer;

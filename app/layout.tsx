@@ -1,33 +1,33 @@
-import type {Metadata} from "next";
-import {Inter} from "next/font/google";
-import "./globals.css";
-import Footer from "@/components/footer";
-import Header from "@/components/header/header";
-import {ThemeProvider} from "@/app/theme-provider";
+import { Footer } from "@/components/footer"
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import { Geist } from 'next/font/google'
 
-const inter = Inter({subsets: ["latin"]});
-
-export const metadata: Metadata = {
-    title: "Krisna Wijaya | Full Stack Developer & Tech Enthusiast",
-    description: "Explore the portfolio of Krisna, a seasoned Full Stack Developer with expertise in Laravel, Next.js, and modern web technologies. Discover projects, skills, and experience that showcase a passion for building robust and innovative digital solutions.",
-};
+const geist = Geist({ subsets: ['latin'] })
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
-    return (
-        <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-            <body className={inter.className + 'flex h-full bg-white dark:bg-black'}>
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col h-screen justify-between ">
-                        <Header/>
-                        {children}
-                        <Footer/>
-                    </div>
-                </ThemeProvider>
-            </body>
-        </html>
-    );
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning className={geist.className}>
+      <head />
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="min-h-screen w-full dark:bg-black bg-white">
+            {children}
+            <Footer />
+          </div>
+
+        </ThemeProvider>
+      </body>
+    </html>
+  )
 }
+
