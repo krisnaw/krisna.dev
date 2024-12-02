@@ -1,9 +1,6 @@
 import { Footer } from "@/components/footer"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Geist } from 'next/font/google'
-
-const geist = Geist({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,
@@ -11,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={geist.className}>
+    <html lang="en" suppressHydrationWarning>
       <head />
       <body>
         <ThemeProvider
