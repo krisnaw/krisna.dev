@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Github, Twitter, Linkedin } from 'lucide-react'
 
 export function Footer() {
     return (
@@ -14,11 +13,9 @@ export function Footer() {
                         <span className="sr-only">GitHub</span>
                     </Link>
                     <Link href="https://twitter.com" className="text-gray-400 hover:text-gray-300 transition-colors">
-                        <Twitter className="h-5 w-5" />
                         <span className="sr-only">Twitter</span>
                     </Link>
                     <Link href="https://linkedin.com" className="text-gray-400 hover:text-gray-300 transition-colors">
-                        <Linkedin className="h-5 w-5" />
                         <span className="sr-only">LinkedIn</span>
                     </Link>
                 </div>
